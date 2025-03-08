@@ -6,6 +6,8 @@ var a = 10;
 // }
 
 let b = 10;
+console.log(`The value of b is ${b}`); // Template litereal
+console.log("The value of b is " + b); // Traditional method
 console.log(b);
 {
   let b = 20;
@@ -21,3 +23,8 @@ c.forEach((element) => {
 c.forEach((element) => {
   console.log(element);
 });
+
+var a = 5,
+  bb = 3,
+  cc = 10;
+console.log(`${a} ${b}`);
