@@ -10,3 +10,7 @@ while (i < 3) {
   console.log(a[i]);
   i++;
 }
+
+for (let i = 0; i < 10; i++) {
+  console.log("hello tishat");
+}

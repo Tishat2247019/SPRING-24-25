@@ -10,6 +10,7 @@ hello = function (a, b) {
 };
 
 hello(1, 2);
+alert("hello");
 
 console.log(sum(5, 10));
 console.log(sum(15, 10));
