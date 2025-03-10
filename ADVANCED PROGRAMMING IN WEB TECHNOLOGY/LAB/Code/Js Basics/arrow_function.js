@@ -5,7 +5,7 @@ let myFunction = (a, b) => a * b;
 new_function = (a, b) => {
   a + b;
 };
-new_function1 = (a, b) => a + b;
+const new_function1 = (a, b) => a + b;
 new_function2 = (a, b) => {
   return a + b;
 };

@@ -14,3 +14,26 @@ while (i < 3) {
 for (let i = 0; i < 10; i++) {
   console.log("hello tishat");
 }
+
+const for_of = [1, 3, 4, 5, 7];
+for (let elem of for_of) {
+  console.log(elem);
+}
+
+const for_in = [3, 3, 3, 4, 4, 4];
+for (let elem in for_in) {
+  // console.log(elem);
+  console.log(a[elem]);
+}
+
+console.log("-----------------------");
+
+a.forEach(print_func);
+
+function print_func(elem) {
+  console.log(elem);
+}
+
+a.forEach((elem, index) => {
+  console.log(`Index ${index}, element is ${elem}`);
+});
