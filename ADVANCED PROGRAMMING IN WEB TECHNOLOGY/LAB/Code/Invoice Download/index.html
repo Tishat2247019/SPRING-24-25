@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Generate Your Ticket</h2>
+    <form id="invoiceForm">
+        <label>Passenger Name:</label>
+        <input type="text" id="passengerName" required>
+
+        <label>Train Name & Number:</label>
+        <input type="text" id="trainName" required>
+
+        <label>From Station:</label>
+        <input type="text" id="fromStation" required>
+
+        <label>To Station:</label>
+        <input type="text" id="toStation" required>
+
+        <label>Journey Date:</label>
+        <input type="date" id="journeyDate" required>
+
+        <label>Class Name:</label>
+        <input type="text" id="className" required>
+
+        <label>Seat Number:</label>
+        <input type="text" id="seatNumber" required>
+
+        <label>Fare (BDT):</label>
+        <input type="number" id="fare" required>
+
+        <button type="button" onclick="generateInvoice(); generateInvoice1()">Download Ticket</button>
+    </form>
+
+    <div id="invoiceContainer" class="hidden">
+        <div id="invoice">
+            <h2>Bangladesh Railway</h2>
+            <table>
+                <tr>
+                    <td><strong>Passenger Name:</strong></td>
+                    <td id="invPassenger"></td>
+                </tr>
+                <tr>
+                    <td><strong>Train Name & Number:</strong></td>
+                    <td id="invTrain"></td>
+                </tr>
+                <tr>
+                    <td><strong>From Station:</strong></td>
+                    <td id="invFrom"></td>
+                </tr>
+                <tr>
+                    <td><strong>To Station:</strong></td>
+                    <td id="invTo"></td>
+                </tr>
+                <tr>
+                    <td><strong>Journey Date:</strong></td>
+                    <td id="invDate"></td>
+                </tr>
+                <tr>
+                    <td><strong>Class Name:</strong></td>
+                    <td id="invClass"></td>
+                </tr>
+                <tr>
+                    <td><strong>Seat Number:</strong></td>
+                    <td id="invSeat"></td>
+                </tr>
+                <tr>
+                    <td><strong>Fare (BDT):</strong></td>
+                    <td id="invFare"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
