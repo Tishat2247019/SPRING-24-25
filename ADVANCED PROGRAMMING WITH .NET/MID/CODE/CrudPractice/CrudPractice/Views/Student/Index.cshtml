@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table table-bordered" >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Dob</th>
+        <th>Cgpa</th>
+    </tr>
+    
+    @foreach (var student in Model)
+    {
+        <tr>
+        <td>@student.Id</td>
+        <td>@student.Name</td>
+        <td>@student.Dob</td>
+        <td>@student.Cgpa</td>
+        <td><a href="/Student/Edit/@student.Id" class="btn btn-success">Edit</a></td>
+        <td><a href="/Student/Delete/@student.Id" class="btn btn-danger"> Delete</a></td>
+        </tr>
+    }
+
+    </table>
+
+        
+
