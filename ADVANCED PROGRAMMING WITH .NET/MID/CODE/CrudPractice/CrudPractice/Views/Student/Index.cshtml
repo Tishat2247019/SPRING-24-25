@@ -4,6 +4,10 @@
 }
 
 <h2>Index</h2>
+@if(TempData["msg"] != null)
+            {
+                <p class="alert alert-success">@TempData["msg"]</p>
+            }
 <table class="table table-bordered" >
     <tr>
         <th>ID</th>

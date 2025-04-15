@@ -35,11 +35,47 @@ namespace CrudPractice.Controllers
             return View(s);
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var db = new crudEntities();
             var student_data = db.Students.Find(id);
             return View(student_data);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student s)
+        {
+            var db = new crudEntities();
+            var old_data = db.Students.Find(s.Id);
+            old_data.Name = s.Name;
+            old_data.Id = s.Id;
+            old_data.Dob = s.Dob;
+            if(db.SaveChanges() > 0)
+            {
+                TempData["msg"] = "Information updated";
+                return RedirectToAction("Index");
+            }
+            return View(s);
+
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var db = new crudEntities();
+            var old_data = db.Students.Find(id);
+            return View(old_data);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Student s)
+        {
+            var db = new crudEntities();
+            var old_data = db.Students.Find(s.Id);
+            db.Students.Remove(old_data);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+            //return View();
         }
     }
 }

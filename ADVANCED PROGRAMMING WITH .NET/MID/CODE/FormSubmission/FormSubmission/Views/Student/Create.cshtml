@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+
+
+         
+@if(Model != null) { 
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Cgpa</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Profession</th>
+        <th>Dob</th>
+        <th>Hobbies</th>
+    </tr>
+<tr>
+                    </tr>
+                
+                    <tr>
+                        <td>@Model.Id</td>
+                        <td>@Model.Name</td>
+                        <td>@Model.Cgpa</td>
+                        <td>@Model.Email</td>
+                        <td>@Model.Gender</td>
+                        <td>@Model.Profession</td>
+                        <td>@Model.Dob.ToString("dd-MM-yyyy")</td>
+                        <td>
+                        @foreach(var item in Model.Hobbies)
+                {
+                            @(item + ",")
+
+                }
+                        </td>
+                    </tr>
+                
+</table>
+            }
+
+<form method="post">
+    <input type="number" name="Id" placeholder="Enter your Id" class="form-control" />
+    <br />
+    <input type="text" name="Name" placeholder="Enter your Name" class="form-control" />
+    <br />
+    <input type="text" name="Cgpa" placeholder="Enter you Cgpa" class="form-control" />
+    <br />
+    <input type="text" name="Email" placeholder="Enter you Email" class="form-control" />
+    <br />
+    Gender : <input type="radio" name="Gender" value="Male" /> Male
+    <input type="radio" name="Gender" vlaue="Female" /> Female  
+    <br />
+    <select name="Profession" class="form-control">
+        <option selected disabled>Select Profession</option>
+        <option value="Student">Student</option>
+        <option value="Business">Business</option>
+        <option value="Job">Job</option>
+    </select>
+    <br />
+    <input type="date" name="Dob" class="form-control" />
+    <br />
+
+    Hobbies:
+    <input type="checkbox" name="Hobbies[]" value="Travelling" /> Travelling
+    <input type="checkbox" name="Hobbies[]" value="Music" /> Music
+    <input type="checkbox" name="Hobbies[]" value="Sports" /> Sports
+    <input type="checkbox" name="Hobbies[]" value="Games" /> Games
+
+    <br />
+    <input type="submit" value="Add" class="btn btn-success" />
+
+</form>
+
